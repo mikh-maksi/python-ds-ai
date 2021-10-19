@@ -5,7 +5,7 @@ import mysql.connector
 mydb = mysql.connector.connect(
   host="mikhmaksi2.mysql.pythonanywhere-services.com",
   user="mikhmaksi2",
-  password="1tmed1a123",
+  password="",
   database = "mikhmaksi2$default"
 )
 
@@ -20,7 +20,7 @@ mycursor.execute("CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, nam
 mydb = mysql.connector.connect(
   host="mikhmaksi2.mysql.pythonanywhere-services.com",
   user="mikhmaksi2",
-  password="1tmed1a123",
+  password="",
   database = "mikhmaksi2$default"
 )
 
@@ -43,7 +43,7 @@ print(mycursor.rowcount, "record inserted.")
 mydb = mysql.connector.connect(
   host="mikhmaksi2.mysql.pythonanywhere-services.com",
   user="mikhmaksi2",
-  password="1tmed1a123",
+  password="",
   database = "mikhmaksi2$default"
 )
 
