@@ -1,4 +1,4 @@
-f = open('/Users/mac/Documents/work/python/python-ds-ai/py/data.csv', 'r')
+f = open('D:\python\python-ds-ai\py\data.csv', 'r')
 elements_list = []
 for line in f:
    line
