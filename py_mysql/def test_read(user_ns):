@@ -1,0 +1,53 @@
+def test_read(user_ns):
+    from unittest import mock
+
+    assert "read_employees_from_file" in user_ns, "{{read_employees_from_file}}"
+
+    mock_open = mock.mock_open(read_data='Robert Stivenson, 28\nAlex Denver, 30\nDrake Mikelsson, 19\n')
+    user_ns['__builtins__']['open'] = mock_open
+
+    read_employees_from_file = user_ns["read_employees_from_file"]
+    path = "data/employees.csv"
+    result = read_employees_from_file(path)
+    assert isinstance(result, list), f"{{type}}"
+
+    try:
+        mock_open.assert_called_once()
+    except:
+        raise AssertionError(f'{{open}}')
+
+    assert path in mock_open.call_args[0], f"{{open_path}}"
+    assert 'r' in mock_open.call_args[0], f"{{open_r}}"
+    test_result = ['Robert Stivenson, 28', 'Alex Denver, 30', 'Drake Mikelsson, 19']
+    assert result == test_result, f"{{func_wrong}} {test_result}"
+
+    assert mock_open.mock_calls.count(mock.call().close()) == 1, f'{{file_close}}'
+
+    return f"{{success}} {test_result}"
+
+def test_read_two(user_ns):
+    from unittest import mock
+
+    assert "read_employees_from_file" in user_ns, "{{read_employees_from_file}}"
+
+    mock_open = mock.mock_open(read_data='Alexandr Popov, 28\nLarisa Host, 31\nPavel Durov, 29')
+    user_ns['__builtins__']['open'] = mock_open
+
+    read_employees_from_file = user_ns["read_employees_from_file"]
+    path = "data/employees.csv"
+    result = read_employees_from_file(path)
+    assert isinstance(result, list), f"{{type}}"
+
+    try:
+        mock_open.assert_called_once()
+    except:
+        raise AssertionError(f'{{open}}')
+
+    assert path in mock_open.call_args[0], f"{{open_path}}"
+    assert 'r' in mock_open.call_args[0], f"{{open_r}}"
+    test_result = ['Alexandr Popov, 28', 'Larisa Host, 31', 'Pavel Durov, 29']
+    assert result == test_result, f"{{func_wrong}} {test_result}"
+
+    assert mock_open.mock_calls.count(mock.call().close()) == 1, f'{{file_close}}'
+
+    return f"{{success}} {test_result}"

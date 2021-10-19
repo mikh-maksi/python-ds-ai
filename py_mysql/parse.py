@@ -14,11 +14,3 @@ for element in elements:
     print(float(element))
 
 
-import plotly.graph_objects as go
-some_list = [2, 4, 4, 3]
-
-f = go.FigureWidget()
-f.add_scatter(y=some_list);
-f.add_bar(y=[1, 4, 3, 2]);
-f.layout.title = 'Hello FigureWidget'
-f.show()
