@@ -4,7 +4,7 @@
 mydb = mysql.connector.connect(
   host="mikhmaksi2.mysql.pythonanywhere-services.com",
   user="mikhmaksi2",
-  password="1tmed1a123",
+  password="",
   database = "mikhmaksi2$default"
 )
 
@@ -22,7 +22,7 @@ for x in myresult:
 mydb = mysql.connector.connect(
   host="mikhmaksi2.mysql.pythonanywhere-services.com",
   user="mikhmaksi2",
-  password="1tmed1a123",
+  password="",
   database = "mikhmaksi2$default"
 )
 
@@ -42,7 +42,7 @@ for x in myresult:
 mydb = mysql.connector.connect(
   host="mikhmaksi2.mysql.pythonanywhere-services.com",
   user="mikhmaksi2",
-  password="1tmed1a123",
+  password="",
   database = "mikhmaksi2$default"
 )
 
