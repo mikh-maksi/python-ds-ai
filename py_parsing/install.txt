@@ -1,2 +1,2 @@
 pip3 install requests --user
-pip3 install pip install beautifulsoup4 --user
+pip3 install beautifulsoup4 --user
