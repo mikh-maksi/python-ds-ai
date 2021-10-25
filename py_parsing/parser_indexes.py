@@ -12,6 +12,7 @@ def get_html(url, params=None):
 
 
 def get_content(html):
+    f = open('e:\\back\max\parsing\data.csv', 'w')
     soup = BeautifulSoup(html, 'html.parser')
     items = soup.find_all('a')
     cars = []
@@ -19,7 +20,9 @@ def get_content(html):
     for item in items:
         n=n+1
         elem_out = item.get_text()
+        f.write(elem_out+';\n')
         print(elem_out)
+    f.close()
     return cars
 
 
